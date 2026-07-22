@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Salma &amp; Dr. Zahid — Nikah Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+SC:wght@500;600&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ivory:#f6efdd;
+    --paper:#faf4e5;
+    --maroon-deep:#3d0f13;
+    --maroon:#5c1620;
+    --maroon-2:#7a2430;
+    --burgundy:#8f2a2a;
+    --gold-deep:#9a7420;
+    --gold:#c9a227;
+    --gold-light:#e8cf7c;
+    --gold-pale:#f3e6ba;
+    --emerald:#0f3d2e;
+    --emerald-2:#1f5c46;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    overflow-x:hidden;
+    background:
+      radial-gradient(ellipse at 30% 0%, #e9dcb8 0%, #d4c193 55%, #b9a06a 100%);
+    color:var(--maroon);
+    font-family:'Cormorant Garamond', serif;
+    display:flex;
+    justify-content:center;
+    padding:26px 12px 54px;
+    min-height:100vh;
+  }
+
+  .frame{
+    width:100%;
+    max-width:470px;
+    position:relative;
+    background:linear-gradient(155deg, var(--gold-light), var(--gold-deep) 45%, var(--gold-light));
+    padding:10px;
+    box-shadow:0 34px 70px rgba(40,15,10,0.45), 0 0 0 1px rgba(255,255,255,0.15) inset;
+  }
+
+  .frame-inner{
+    background:var(--gold-pale);
+    padding:3px;
+  }
+
+  .card{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 15% 6%, rgba(143,42,42,0.10), transparent 42%),
+      radial-gradient(ellipse at 88% 4%, rgba(143,42,42,0.10), transparent 40%),
+      repeating-linear-gradient(115deg, rgba(154,116,32,0.06) 0px, rgba(154,116,32,0.06) 1.5px, transparent 1.5px, transparent 26px),
+      repeating-linear-gradient(25deg, rgba(154,116,32,0.05) 0px, rgba(154,116,32,0.05) 1.5px, transparent 1.5px, transparent 26px),
+      var(--paper);
+    border:1px solid rgba(154,116,32,0.5);
+    overflow:hidden;
+    padding:0;
+  }
+
+  /* corner medallions */
+  .medallion{position:absolute; width:58px; height:58px; z-index:4; pointer-events:none;}
+  .medallion.tl{top:6px; left:6px;}
+  .medallion.tr{top:6px; right:6px; transform:scaleX(-1);}
+  .medallion.bl{bottom:6px; left:6px; transform:scaleY(-1);}
+  .medallion.br{bottom:6px; right:6px; transform:scale(-1,-1);}
+
+  /* florals */
+  .floral{position:absolute; z-index:1; pointer-events:none;}
+  .floral.tl{top:38px; left:-14px; width:140px;}
+  .floral.tr{top:38px; right:-14px; width:140px; transform:scaleX(-1);}
+  .floral.bl{bottom:-6px; left:-12px; width:120px; transform:scaleY(-1) rotate(6deg);}
+  .floral.br{bottom:-6px; right:-12px; width:120px; transform:scale(-1,-1) rotate(6deg);}
+
+  /* lanterns */
+  .lantern{position:absolute; top:2px; z-index:3; width:38px;}
+  .lantern.l1{left:40px;}
+  .lantern.l2{left:98px; top:16px;}
+  .lantern.r1{right:40px;}
+  .lantern.r2{right:98px; top:16px;}
+
+  .fade{opacity:0; transform:translateY(8px); animation:reveal .9s ease forwards;}
+  @media (prefers-reduced-motion: reduce){.fade{opacity:1; transform:none; animation:none;} .curtain{display:none;} .name-pop{opacity:1!important; transform:none!important; animation:none!important;}}
+  @keyframes reveal{to{opacity:1; transform:translateY(0);}}
+  .d1{animation-delay:2.0s;} .d2{animation-delay:2.3s;} .d3{animation-delay:2.9s;}
+  .d4{animation-delay:3.3s;} .d5{animation-delay:3.5s;} .d6{animation-delay:3.7s;} .d7{animation-delay:3.9s;}
+
+  /* ===== curtain-opening intro ===== */
+  .curtain{
+    position:fixed; top:0; bottom:0; width:52vw; z-index:200;
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0px, transparent 10px, transparent 22px, rgba(255,255,255,0.06) 24px),
+      linear-gradient(180deg, #8f2a2a 0%, #5c1620 45%, #3d0f13 100%);
+    box-shadow: inset -30px 0 60px rgba(0,0,0,0.55);
+  }
+  .curtain.left{left:0; border-right:3px solid var(--gold); animation:openLeft 1.5s cubic-bezier(.7,0,.3,1) 0.5s forwards;}
+  .curtain.right{right:0; border-left:3px solid var(--gold); animation:openRight 1.5s cubic-bezier(.7,0,.3,1) 0.5s forwards;}
+  .curtain::before{
+    content:'';
+    position:absolute; left:0; right:0; top:0; height:36px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 10px, var(--gold-deep) 10px 20px);
+    box-shadow:0 3px 10px rgba(0,0,0,0.4);
+  }
+  .curtain::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0; height:22px;
+    background:radial-gradient(circle, var(--gold) 0 5px, transparent 6px) repeat-x;
+    background-size:20px 22px;
+    opacity:0.85;
+  }
+  .curtain-emblem{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:70px; height:70px; z-index:201;
+    opacity:0; animation:emblemFade 0.6s ease 0.15s forwards;
+  }
+  .curtain.left .curtain-emblem{right:-35px; left:auto;}
+  .curtain.right .curtain-emblem{left:-35px;}
+  @keyframes emblemFade{ to{opacity:1;} }
+  @keyframes openLeft{ to{ transform:translateX(-100%); } }
+  @keyframes openRight{ to{ transform:translateX(100%); } }
+
+  /* names pop-in — scroll triggered, replays on re-entry */
+  .name-pop{
+    opacity:0;
+    transform:scale(0.4);
+    transition:opacity .6s cubic-bezier(.34,1.56,.64,1), transform .6s cubic-bezier(.34,1.56,.64,1);
+  }
+  .name-pop.in-view{ opacity:1; transform:scale(1); }
+
+  /* scroll-triggered event reveal */
+  .event{
+    opacity:0;
+    transform:translateX(-46px);
+    transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1);
+  }
+  .event.in-view{opacity:1; transform:translateX(0);}
+  .event::before{
+    opacity:0;
+    transform:scale(0) rotate(-90deg);
+    transition:opacity .4s ease .25s, transform .5s cubic-bezier(.34,1.56,.64,1) .25s;
+  }
+  .event.in-view::before{opacity:1; transform:scale(1) rotate(0);}
+
+  /* finial above arch */
+  .finial{
+    text-align:center;
+    padding-top:26px;
+    position:relative;
+    z-index:2;
+  }
+  .finial svg{width:46px; height:46px;}
+
+  .arch-wrap{
+    margin:6px 22px 0;
+    border:1.5px solid var(--gold-deep);
+    border-radius:130px 130px 6px 6px;
+    padding:3px;
+    position:relative;
+    z-index:2;
+  }
+  .arch-mid{
+    border:1px solid rgba(154,116,32,0.6);
+    border-radius:124px 124px 4px 4px;
+    padding:2px;
+  }
+  .arch-inner{
+    border:1px solid rgba(154,116,32,0.45);
+    border-radius:120px 120px 3px 3px;
+    padding:38px 26px 34px;
+    text-align:center;
+    position:relative;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,162,39,0.10), transparent 55%);
+  }
+
+  .bismillah-full{
+    font-family:'Noto Naskh Arabic','Geeza Pro','Traditional Arabic',serif;
+    font-size:1.55rem;
+    color:var(--maroon-deep);
+    margin:0 0 14px;
+    line-height:1.6;
+    text-shadow:0 0 18px rgba(201,162,39,0.25);
+  }
+
+  .invocation{
+    font-size:0.96rem;
+    line-height:1.65;
+    color:var(--maroon-2);
+    margin:0 0 4px;
+    font-style:italic;
+  }
+  .invitewords{
+    font-size:0.98rem;
+    line-height:1.65;
+    color:var(--maroon-2);
+    margin:18px 0 0;
+    max-width:300px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .groomname, .bridename{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:2.15rem;
+    background:linear-gradient(180deg, var(--maroon-deep), var(--burgundy) 60%, var(--maroon-deep));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:var(--maroon-deep);
+    margin:22px 0 6px;
+    line-height:1.2;
+    letter-spacing:0.5px;
+  }
+  .caption{
+    font-family:'Cinzel', serif;
+    font-size:0.68rem;
+    letter-spacing:1.5px;
+    color:var(--gold-deep);
+    margin:0;
+    text-transform:uppercase;
+  }
+  .weds{
+    font-family:'Cormorant SC', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--gold-deep);
+    margin:22px 0;
+    letter-spacing:3px;
+    position:relative;
+  }
+
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin:28px auto 10px; width:74%;
+  }
+  .divider .line{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--gold-deep), transparent);}
+  .divider svg{width:20px; height:20px;}
+
+  .programme-title{
+    font-family:'Cinzel', serif;
+    font-size:1.05rem;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:var(--maroon-deep);
+    margin:0 0 24px;
+  }
+
+  .events{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    text-align:left;
+    padding:0 2px;
+  }
+  .event{
+    position:relative;
+    padding:14px 16px 13px 20px;
+    background:linear-gradient(90deg, rgba(201,162,39,0.09), transparent 70%);
+    border-left:3px solid var(--gold-deep);
+    border-radius:0 3px 3px 0;
+  }
+  .event::before{
+    content:'☾';
+    position:absolute;
+    left:-11px;
+    top:14px;
+    width:18px; height:18px;
+    background:var(--paper);
+    color:var(--gold-deep);
+    font-size:0.85rem;
+    line-height:18px;
+    text-align:center;
+  }
+  .event h4{
+    font-family:'Playfair Display', serif;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--maroon-deep);
+    margin:0 0 8px;
+  }
+  .event p{
+    font-size:0.92rem;
+    line-height:1.55;
+    color:var(--maroon-2);
+    margin:0 0 2px;
+  }
+  .event .venue-label{
+    color:var(--emerald-2);
+    font-weight:500;
+  }
+
+  .ayat-band{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .8s ease, transform .8s ease;
+    margin:30px -26px 6px;
+    padding:20px 26px;
+    background:
+      linear-gradient(90deg, rgba(92,22,32,0.08), rgba(92,22,32,0.14), rgba(92,22,32,0.08));
+    border-top:1px solid rgba(154,116,32,0.4);
+    border-bottom:1px solid rgba(154,116,32,0.4);
+    text-align:center;
+  }
+  .ayat-band .arabic{
+    font-family:'Noto Naskh Arabic','Geeza Pro','Traditional Arabic',serif;
+    font-size:1.15rem;
+    color:var(--maroon-deep);
+    margin:0 0 10px;
+    line-height:1.9;
+  }
+  .ayat-band.in-view{opacity:1; transform:translateY(0);}
+  .arabic-wrap{position:relative;}
+  .ayat-band .arabic{
+    -webkit-clip-path:inset(0 0 0 100%);
+    clip-path:inset(0 0 0 100%);
+    -webkit-transition:-webkit-clip-path 1.3s cubic-bezier(.65,0,.35,1) .3s;
+    transition:clip-path 1.3s cubic-bezier(.65,0,.35,1) .3s;
+  }
+  .ayat-band.in-view .arabic{
+    -webkit-clip-path:inset(0 0 0 0%);
+    clip-path:inset(0 0 0 0%);
+  }
+  .tr-line{display:block;}
+  .tr-word{display:inline-block; white-space:nowrap;}
+  .tr-letter{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .ayat-band.in-view .tr-letter{opacity:1; transform:translateY(0);}
+  .ayat-band p.tr{
+    margin:0;
+    font-size:0.92rem;
+    font-style:italic;
+    line-height:1.7;
+    color:var(--maroon-2);
+  }
+  .ayat-band .ref{
+    display:block;
+    margin-top:8px;
+    font-family:'Cinzel', serif;
+    font-size:0.62rem;
+    letter-spacing:2px;
+    color:var(--gold-deep);
+  }
+
+  .regards{
+    margin-top:24px;
+  }
+  .regards .from{
+    font-family:'Cinzel', serif;
+    font-size:0.68rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    margin:0 0 10px;
+  }
+  .regards .family{
+    font-size:1rem;
+    color:var(--maroon-deep);
+    line-height:1.6;
+    margin:0;
+    font-weight:500;
+  }
+
+  .footer-glyph{
+    text-align:center;
+    margin-top:22px;
+    color:var(--gold-deep);
+    font-size:1.1rem;
+    letter-spacing:8px;
+  }
+
+  .bottom-space{height:14px;}
+</style>
+</head>
+<body>
+
+<noscript>
+  <style>
+    .curtain{display:none!important;}
+    .event, .name-pop, .ayat-band, .ayat-band .arabic, .tr-letter{
+      opacity:1!important; transform:none!important;
+      -webkit-clip-path:none!important; clip-path:none!important;
+    }
+    .fade{opacity:1!important; transform:none!important; animation:none!important;}
+  </style>
+</noscript>
+
+<div class="curtain left">
+  <svg class="curtain-emblem" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="35" cy="35" r="30" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="22" fill="none" stroke="#c9a227" stroke-width="1"/>
+    <path d="M35 18 A17 17 0 1 0 46 26 A13 13 0 1 1 35 18 Z" fill="#c9a227"/>
+  </svg>
+</div>
+<div class="curtain right">
+  <svg class="curtain-emblem" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="35" cy="35" r="30" fill="none" stroke="#c9a227" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="22" fill="none" stroke="#c9a227" stroke-width="1"/>
+    <path d="M35 18 A17 17 0 1 0 46 26 A13 13 0 1 1 35 18 Z" fill="#c9a227"/>
+  </svg>
+</div>
+
+<div class="frame">
+  <div class="frame-inner">
+  <div class="card">
+
+    <svg class="medallion tl" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="#9a7420" stroke-width="1.2"/>
+      <circle cx="12" cy="12" r="4" fill="#c9a227"/>
+      <path d="M12 3 L12 21 M3 12 L21 12" stroke="#9a7420" stroke-width="0.6"/>
+      <path d="M2 2 Q28 2 28 28" stroke="#9a7420" stroke-width="1" fill="none"/>
+    </svg>
+    <svg class="medallion tr" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="#9a7420" stroke-width="1.2"/>
+      <circle cx="12" cy="12" r="4" fill="#c9a227"/>
+      <path d="M12 3 L12 21 M3 12 L21 12" stroke="#9a7420" stroke-width="0.6"/>
+      <path d="M2 2 Q28 2 28 28" stroke="#9a7420" stroke-width="1" fill="none"/>
+    </svg>
+    <svg class="medallion bl" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="#9a7420" stroke-width="1.2"/>
+      <circle cx="12" cy="12" r="4" fill="#c9a227"/>
+      <path d="M12 3 L12 21 M3 12 L21 12" stroke="#9a7420" stroke-width="0.6"/>
+      <path d="M2 2 Q28 2 28 28" stroke="#9a7420" stroke-width="1" fill="none"/>
+    </svg>
+    <svg class="medallion br" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="#9a7420" stroke-width="1.2"/>
+      <circle cx="12" cy="12" r="4" fill="#c9a227"/>
+      <path d="M12 3 L12 21 M3 12 L21 12" stroke="#9a7420" stroke-width="0.6"/>
+      <path d="M2 2 Q28 2 28 28" stroke="#9a7420" stroke-width="1" fill="none"/>
+    </svg>
+
+    <svg class="floral tl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.55">
+        <ellipse cx="30" cy="28" rx="20" ry="16" fill="#8f2a2a" opacity="0.55"/>
+        <ellipse cx="18" cy="20" rx="14" ry="11" fill="#c9a227" opacity="0.35"/>
+        <circle cx="30" cy="24" r="6" fill="#5c1620"/>
+        <path d="M10 40 Q30 55 55 45" stroke="#5f7048" stroke-width="2.5" fill="none" opacity="0.45"/>
+        <ellipse cx="65" cy="52" rx="8" ry="5" fill="#1f5c46" opacity="0.4"/>
+      </g>
+    </svg>
+    <svg class="floral tr" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.55">
+        <ellipse cx="30" cy="28" rx="20" ry="16" fill="#8f2a2a" opacity="0.55"/>
+        <ellipse cx="18" cy="20" rx="14" ry="11" fill="#c9a227" opacity="0.35"/>
+        <circle cx="30" cy="24" r="6" fill="#5c1620"/>
+        <path d="M10 40 Q30 55 55 45" stroke="#5f7048" stroke-width="2.5" fill="none" opacity="0.45"/>
+        <ellipse cx="65" cy="52" rx="8" ry="5" fill="#1f5c46" opacity="0.4"/>
+      </g>
+    </svg>
+    <svg class="floral bl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.45">
+        <ellipse cx="24" cy="22" rx="16" ry="13" fill="#8f2a2a" opacity="0.5"/>
+        <circle cx="24" cy="20" r="5" fill="#5c1620"/>
+        <path d="M6 34 Q22 44 40 36" stroke="#5f7048" stroke-width="2.5" fill="none" opacity="0.4"/>
+      </g>
+    </svg>
+    <svg class="floral br" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.45">
+        <ellipse cx="24" cy="22" rx="16" ry="13" fill="#8f2a2a" opacity="0.5"/>
+        <circle cx="24" cy="20" r="5" fill="#5c1620"/>
+        <path d="M6 34 Q22 44 40 36" stroke="#5f7048" stroke-width="2.5" fill="none" opacity="0.4"/>
+      </g>
+    </svg>
+
+    <svg class="lantern l1" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="0" x2="20" y2="10" stroke="#9a7420" stroke-width="1.5"/>
+      <rect x="10" y="10" width="20" height="4" rx="1" fill="#9a7420"/>
+      <path d="M12 14 L28 14 L25 46 L15 46 Z" fill="#e8cf7c" opacity="0.9" stroke="#9a7420" stroke-width="1"/>
+      <rect x="14" y="46" width="12" height="4" fill="#9a7420"/>
+      <ellipse cx="20" cy="30" rx="6" ry="10" fill="#fff3cf" opacity="0.7"/>
+    </svg>
+    <svg class="lantern l2" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="0" x2="20" y2="10" stroke="#9a7420" stroke-width="1.5"/>
+      <rect x="10" y="10" width="20" height="4" rx="1" fill="#9a7420"/>
+      <path d="M12 14 L28 14 L25 46 L15 46 Z" fill="#e8cf7c" opacity="0.9" stroke="#9a7420" stroke-width="1"/>
+      <rect x="14" y="46" width="12" height="4" fill="#9a7420"/>
+      <ellipse cx="20" cy="30" rx="6" ry="10" fill="#fff3cf" opacity="0.7"/>
+    </svg>
+    <svg class="lantern r1" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="0" x2="20" y2="10" stroke="#9a7420" stroke-width="1.5"/>
+      <rect x="10" y="10" width="20" height="4" rx="1" fill="#9a7420"/>
+      <path d="M12 14 L28 14 L25 46 L15 46 Z" fill="#e8cf7c" opacity="0.9" stroke="#9a7420" stroke-width="1"/>
+      <rect x="14" y="46" width="12" height="4" fill="#9a7420"/>
+      <ellipse cx="20" cy="30" rx="6" ry="10" fill="#fff3cf" opacity="0.7"/>
+    </svg>
+    <svg class="lantern r2" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="0" x2="20" y2="10" stroke="#9a7420" stroke-width="1.5"/>
+      <rect x="10" y="10" width="20" height="4" rx="1" fill="#9a7420"/>
+      <path d="M12 14 L28 14 L25 46 L15 46 Z" fill="#e8cf7c" opacity="0.9" stroke="#9a7420" stroke-width="1"/>
+      <rect x="14" y="46" width="12" height="4" fill="#9a7420"/>
+      <ellipse cx="20" cy="30" rx="6" ry="10" fill="#fff3cf" opacity="0.7"/>
+    </svg>
+
+    <div class="finial fade d1">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 4 A14 14 0 1 0 44 18 A11 11 0 1 1 30 4 Z" fill="#c9a227"/>
+        <circle cx="46" cy="10" r="2.6" fill="#c9a227"/>
+      </svg>
+    </div>
+
+    <div class="arch-wrap">
+      <div class="arch-mid">
+      <div class="arch-inner">
+
+        <p class="bismillah-full fade d1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+        <p class="invocation fade d1">In the name of Allah,<br>the Most Beneficent, the Most Merciful.</p>
+
+        <p class="invitewords fade d2">we are pleased to invite you to the<br>Nikah ceremony of our beloved children.</p>
+
+        <h2 class="bridename name-pop" style="transition-delay:2.5s;">Salma Khwaza</h2>
+        <p class="caption fade d3">Daughter of Mr. &amp; Mrs. Kasim Khwaza</p>
+
+        <p class="weds fade d3">weds</p>
+
+        <h2 class="groomname name-pop" style="transition-delay:2.85s;">Dr. Zahid Alam Borbhuyan</h2>
+        <p class="caption fade d4">Son of Mr. &amp; Mrs. Maulana Nizamuddin Borbhuyan</p>
+
+        <div class="divider fade d4">
+          <span class="line"></span>
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L12 8 L19 8 L13.5 12.3 L15.5 19.3 L10 15 L4.5 19.3 L6.5 12.3 L1 8 L8 8 Z" fill="#c9a227"/></svg>
+          <span class="line"></span>
+        </div>
+        <p class="programme-title fade d4">Programme</p>
+
+        <div class="events fade d5">
+          <div class="event">
+            <h4>Mehandi</h4>
+            <p>Wednesday, 14th October 2026</p>
+            <p>Evening, 6:00 PM onwards</p>
+            <p class="venue-label">Venue: BILT A Colony</p>
+          </div>
+          <div class="event">
+            <h4>Nikah Ceremony</h4>
+            <p>Friday, 16th October 2026</p>
+            <p>After Juma Namaaz</p>
+            <p class="venue-label">Venue: Juma Masjid, Mumbai</p>
+          </div>
+          <div class="event">
+            <h4>Walima Reception</h4>
+            <p>Saturday, 17th October 2026</p>
+            <p>7:30 PM onwards</p>
+            <p class="venue-label">Venue: Juma Masjid, Mumbai</p>
+          </div>
+        </div>
+
+        <div class="ayat-band" id="ayatBand">
+          <div class="arabic-wrap">
+            <p class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+          </div>
+          <p class="tr" id="ayatTr">"And among His signs is that He created for you spouses from among yourselves, that you may find tranquility in them, and He placed between you love and mercy."</p>
+          <span class="ref">Surah Ar-Rum 30:21</span>
+        </div>
+
+        <div class="regards fade d7">
+          <p class="from">Warm Regards</p>
+          <p class="family">Kasim Khwaza &middot; Sultana Khwaza &middot; Irshad Khwaza<br>&amp; Family</p>
+        </div>
+
+        <div class="footer-glyph fade d7">۞</div>
+
+        <div class="bottom-space"></div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<script>
+function revealEverything(){
+  document.querySelectorAll('.event, .name-pop, .ayat-band, .ayat-band .arabic, .tr-letter').forEach(function(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.webkitClipPath = 'none';
+    el.style.clipPath = 'none';
+  });
+}
+
+function initAnimations(){
+  try{
+    var events = document.querySelectorAll('.event');
+    events.forEach(function(el, i){
+      el.style.transitionDelay = (i * 0.15) + 's';
+    });
+
+    var ayatTr = document.getElementById('ayatTr');
+    var ayatBand = document.getElementById('ayatBand');
+    if (ayatTr){
+      ayatTr.textContent = '';
+
+      function buildLine(text, startIndex, container){
+        var words = text.split(' ');
+        var idx = startIndex;
+        words.forEach(function(word, wi){
+          var wordSpan = document.createElement('span');
+          wordSpan.className = 'tr-word';
+          word.split('').forEach(function(ch){
+            var letter = document.createElement('span');
+            letter.className = 'tr-letter';
+            letter.textContent = ch;
+            letter.style.transitionDelay = (idx * 0.02) + 's';
+            wordSpan.appendChild(letter);
+            idx++;
+          });
+          container.appendChild(wordSpan);
+          if (wi < words.length - 1){
+            container.appendChild(document.createTextNode(' '));
+          }
+        });
+        return idx;
+      }
+
+      var line1 = document.createElement('span');
+      line1.className = 'tr-line';
+      var line2 = document.createElement('span');
+      line2.className = 'tr-line';
+
+      var nextIndex = buildLine('"And among His signs is that He created for you spouses from among yourselves, that you may find tranquility in them,', 0, line1);
+      buildLine('and He placed between you love and mercy."', nextIndex, line2);
+
+      ayatTr.appendChild(line1);
+      ayatTr.appendChild(line2);
+    }
+
+    var names = document.querySelectorAll('.name-pop');
+    names.forEach(function(el){
+      el.addEventListener('transitionend', function handler(){
+        el.style.transitionDelay = '0s';
+        el.removeEventListener('transitionend', handler);
+      });
+    });
+
+    if ('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, {threshold: 0.3});
+      events.forEach(function(el){ observer.observe(el); });
+      names.forEach(function(el){ observer.observe(el); });
+      if (ayatBand){ observer.observe(ayatBand); }
+    } else {
+      events.forEach(function(el){ el.classList.add('in-view'); });
+      names.forEach(function(el){ el.classList.add('in-view'); });
+      if (ayatBand){ ayatBand.classList.add('in-view'); }
+    }
+  } catch(err){
+    revealEverything();
+  }
+}
+
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initAnimations);
+} else {
+  initAnimations();
+}
+</script>
+
+</body>
+</html>
